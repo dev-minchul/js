@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 최종 실습</title>
+  <style>
+    #head{
+      display: flex;
+      justify-content: center;
+    }
+    th{
+      padding: 5px 20px;
+    }
+
+    .form legend{
+      text-align: center;
+    }
+
+    .one{
+      background-color: lemonchiffon;
+    }
+    .form{
+      display: flex;
+      position: absolute;
+      right: 0 auto;
+      flex-direction: column;
+      width: 200px;
+   
+    }
+  </style>
+</head>
+<body>
+  <div id="head">
+    <div>
+      <ul>
+      <table border = "1">
+        <tr class ="one">
+          <th>구분</th>
+          <th>요금</th>
+        </tr>
+        <tr>
+          <th>아동</th>
+          <th>무료</th>
+        </tr>
+        <tr>
+          <th>청소년</th>
+          <th>2000</th>
+        </tr>
+        <tr>
+          <th>성인</th>
+          <th>5000</th>
+        </tr>
+      </table>
+    </ul>
+    <form action="where">
+      <fieldset class="form">
+        <legend>구분</legend>
+        <input type="text">
+        <button>확인</button>
+      </fieldset>
+    </form>
+    </div>
+  </div>
+  
+
+</body>
+<script src="./jQuery.js"></script>
+<script>
+  const $button = $("button");
+  const $ul = $("ul");
+
+</script>
+</html>

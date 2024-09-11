@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>첨부파일 썸네일</title>
+  <style>
+    div.wrap{
+      width: 90px;
+      height: 90px;
+      margin: 0 auto;
+    }
+    
+    .close{
+      width: 90px;
+      height: 90px;
+      margin: 0 auto;
+    }
+
+    div.image{
+      cursor: pointer;
+      background-image: url(./images/add.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 70px;
+      height: 70px;
+    }
+
+    input[type='file']{
+      display: none;
+    }
+    
+  </style>
+</head>
+<body>
+  <form>
+    <div class="wrap">
+      <label for="attach">
+        <div class="image"></div>
+      </label>
+    </div>
+    <img src="./images/close.png" class="close" alt="클로즈 버튼">
+    <input type="file" id="attach">
+  </form>
+</body>
+<script>
+  const input = document.querySelector("input");
+  const thumbnail = document.querySelector(".image");
+  input.addEventListener("change",(e) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = (e) => {
+      console.log(e)
+      thumbnail.style.backgroundImage = `url(${e.target.result})`;   
+    }
+
+  })
+  // close버튼을 누르면 추가한 이미지에서 원래 이미지로 변경한다.
+
+  const closeImg = document.querySelector(".close").addEventListener("click", ()=>{
+    thumbnail.style.backgroundImage = "url(./image/add.png)"
+  })
+
+
+
+</script>
+</html>
